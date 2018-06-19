@@ -1,0 +1,25 @@
+DataUpdate:
+  type: incoming
+  variables:
+    AirPressure:
+      type: uint32_t
+      unit: mPa
+      scale: 100
+    AirTemperature:
+      type: uint32_t
+      unit: C
+      scale: 10
+    Occupancy:
+      type: boolean
+
+MachineStatus:
+  type: incoming
+  variables:
+    BatteryVoltage:
+      type: uint32_t
+      unit: Volts
+      scale: 1000
+    Uptime:
+      type: uint64_t
+      unit: seconds
+      scale: 1

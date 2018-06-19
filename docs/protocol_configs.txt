@@ -1,0 +1,34 @@
+Protocols work as follows:
+
+Config files are used to define messages and the values that originate and
+Leave from the target device. Message direction is always assumed as coming
+*from* the embedded device and to the PC.
+
+MESSAGE DEFENITION SYNTAX:
+YAML List. All *must* have a type, defined below. if message is an incoming or
+outgoing message, it also must have a variables section
+
+variables can have a type, unit, and scaling factor associated with them. If
+Unit or Scale are omitted, they are kept blank
+
+- DataUpdate:
+  type: incoming
+  variables:
+    - AirPressure:
+      type: uint32_t
+      unit: mPa
+      scale: 100
+    - AirTemperature:
+      type: uint32_t
+      unit: C
+      scale: 10
+    - Occupancy:
+      type: boolean
+
+
+
+message types:
+INCOMING MESSAGES - Embedded Device ---> PC
+  - incoming
+OUTGOING MESSAGES - PC ---> Embedded Device
+  - outgoing
